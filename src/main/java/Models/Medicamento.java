@@ -9,29 +9,26 @@ public class Medicamento {
     private String classeTerapeutica;
     private String produto;
     private String apresentacao;
-    private double preco;
-    private int quantidade;
+    private double precoSugerido;
     List<Laboratorio> laboratorios;
 
-    public Medicamento(int id, String substancia, String classeTerapeutica, String produto,String apresentacao,
-                       double preco,int quantidade) {
+    public Medicamento(int id, String substancia, String classeTerapeutica, String produto, String apresentacao,
+                       double precoSugerido) {
         this.id = id;
         this.substancia = substancia;
         this.produto = produto;
         this.classeTerapeutica = classeTerapeutica;
         this.apresentacao = apresentacao;
-        this.preco = preco;
-        this.quantidade = quantidade;
+        this.precoSugerido = precoSugerido;
     }
 
     public Medicamento(String substancia, String classeTerapeutica, String produto,String apresentacao,
-                       double preco,int quantidade, String laboratorio) {
+                       double precoSugerido) {
         this.substancia = substancia;
         this.produto = produto;
         this.classeTerapeutica = classeTerapeutica;
         this.apresentacao = apresentacao;
-        this.preco = preco;
-        this.quantidade = quantidade;
+        this.precoSugerido = precoSugerido;
     }
 
     /**
@@ -107,39 +104,32 @@ public class Medicamento {
     /**
      * @return the preco
      */
-    public double getPreco() {
-        return preco;
+    public double getPrecoSugerido() {
+        return precoSugerido;
     }
 
     /**
-     * @param preco the preco to set
+     * @param precoSugerido the preco to set
      */
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    /**
-     * @return the quantidade
-     */
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    /**
-     * @param quantidade the quantidade to set
-     */
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setPrecoSugerido(double precoSugerido) {
+        this.precoSugerido = precoSugerido;
     }
 
     public List<Laboratorio> getLaboratorios() {
         return laboratorios;
     }
 
-    public void setLaboratorioId(List<Laboratorio> laboratorios) {
-        if(laboratorios == null)
+    public void setLaboratorios(List<Laboratorio> laboratorios) {
+        if(this.laboratorios == null)
             this.laboratorios = new ArrayList<Laboratorio>();
 
         this.laboratorios = laboratorios;
+    }
+
+    public void adicionarLaboratorio(Laboratorio lab){
+        if(this.laboratorios == null)
+            this.laboratorios = new ArrayList<Laboratorio>();
+
+        this.laboratorios.add(lab);
     }
 }
