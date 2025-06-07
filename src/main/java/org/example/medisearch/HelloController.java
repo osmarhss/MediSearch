@@ -1,14 +1,27 @@
 package org.example.medisearch;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private Button btnlogin;
+    @FXML
+    private TextField txtName;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private TextField txtEmail;
+
+    @FXML
+    private PasswordField txtSenha;
+
+    @FXML
+    private ListView labelconfirmacao;
+    @FXML
+    private void onLoginButtonClick() {
+        String name = txtName.getText();
+        String email = txtEmail.getText();
+        String senha = txtSenha.getText();
+        
     }
 }

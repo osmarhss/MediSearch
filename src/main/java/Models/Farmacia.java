@@ -87,9 +87,9 @@ public class Farmacia {
     }
 
     public void setMedicamentoList(List<Medicamento> medicamentoList) {
-        if(medicamentoList == null)
+        if(medicamentoList == null){
             this.medicamentoList = null;
-
+        }
         this.medicamentoList = medicamentoList;
     }
 }
