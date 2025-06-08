@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -102,5 +103,24 @@ public class Farmacia {
             this.medicamentoList = null;
 
         this.medicamentoList = medicamentoList;
+    }
+
+    public void adicionarMedicamento(Medicamento medicamento){
+        if(medicamentoList == null)
+            medicamentoList = new ArrayList<>();
+
+        medicamentoList.add(medicamento);
+    }
+
+    @Override
+    public String toString() {
+        return "Farmacia{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", medicamentoList=" + medicamentoList +
+                '}';
     }
 }

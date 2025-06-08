@@ -15,9 +15,9 @@ public class MedicamentoDao extends DaoBase<Medicamento> {
     @Override
     public List<Medicamento> obterTodos() throws SQLException {
         String sql = "SELECT m.id as med_id, m.substancia as med_sub, m.classeTerapeutica as med_classT," +
-                "m,produto as med_produto, m.apresentacao as med_apresentacao, m.precoSugerido as med_PrSugerido," +
+                "m.produto as med_produto, m.apresentacao as med_apresentacao, m.precoSugerido as med_PrSugerido," +
                 "l.id as lab_id, l.nome as lab_nome, l.cnpj as lab_cnpj, l.endereco as lab_endereco," +
-                "l.telefone as lab_telefone," +
+                "l.telefone as lab_telefone " +
                 "FROM medicamentos m " +
                 "LEFT JOIN medicamento_laboratorio ml ON m.id = ml.medicamento_id " +
                 "LEFT JOIN laboratorios l ON ml.laboratorio_id = l.id";
@@ -65,7 +65,7 @@ public class MedicamentoDao extends DaoBase<Medicamento> {
 
     @Override
     public Medicamento obterPorId(int id) throws SQLException {
-        String sql = "SELECT * FROM laboratorios WHERE id = ?";
+        String sql = "SELECT * FROM medicamentos WHERE id = ?";
         Medicamento medicamento = null;
         Connection conn = DatabaseManager.getConnection();
 
@@ -89,7 +89,7 @@ public class MedicamentoDao extends DaoBase<Medicamento> {
 
     @Override
     public Medicamento adicionar(Medicamento medicamento) throws SQLException {
-        String sqlMedicamento = "INSERT INTO medicamentos(substacia, classeTerapeutica, produto, apresentacao, precoSugerido) VALUES(?, ?, ?, ?, ?)";
+        String sqlMedicamento = "INSERT INTO medicamentos(substancia, classeTerapeutica, produto, apresentacao, precoSugerido) VALUES(?, ?, ?, ?, ?)";
         String sqlAssociacao = "INSERT INTO medicamento_laboratorio(medicamento_id, laboratorio_id) VALUES(?, ?)";
         Connection conn = DatabaseManager.getConnection();
 
@@ -110,7 +110,7 @@ public class MedicamentoDao extends DaoBase<Medicamento> {
                 }
             }
 
-            if(medicamento.getLaboratorios() != null || !medicamento.getLaboratorios().isEmpty()) {
+            if(medicamento.getLaboratorios() != null && !medicamento.getLaboratorios().isEmpty()) {
                 try (PreparedStatement pstmtAssoc = conn.prepareStatement(sqlAssociacao)) {
 
                     for (Laboratorio lab : medicamento.getLaboratorios()) {
@@ -159,7 +159,7 @@ public class MedicamentoDao extends DaoBase<Medicamento> {
                 pstmt.executeUpdate();
             }
 
-            if(medicamento.getLaboratorios() != null || !medicamento.getLaboratorios().isEmpty()) {
+            if(medicamento.getLaboratorios() != null && !medicamento.getLaboratorios().isEmpty()) {
                 // 2. Exclui todas as associações antigas com laboratórios
                 try (PreparedStatement pstmt = conn.prepareStatement(sqlExcluirAssociacoes)) {
                     pstmt.setInt(1, medicamento.getId());
