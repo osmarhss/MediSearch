@@ -40,7 +40,7 @@ public class HelloController {
 
                 // Substituir a cena
                 Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
-                stage.setTitle("Dashboard - MediSearch");
+                stage.setTitle("MeduSearch - Menu");
                 stage.setScene(dashboardScene);
                 stage.show();
 

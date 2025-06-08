@@ -176,10 +176,5 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="132.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de medicamentos" textFill="#0051ffad">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
