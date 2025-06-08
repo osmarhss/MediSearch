@@ -37,7 +37,7 @@ public class DatabaseManager {
                 " classeTerapeutica TEXT NOT NULL," +
                 " produto TEXT NOT NULL," +
                 " apresentacao TEXT NOT NULL," +
-                " precoSugerido DECIMAL NOT NULL," +
+                " precoSugerido DECIMAL NOT NULL" +
                 ");";
 
         // Tabela de associação para o relacionamento N-N
@@ -67,10 +67,15 @@ public class DatabaseManager {
 
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(sqlLaboratorio);
+            System.out.println("Laboratorios criados com sucesso!");
             stmt.execute(sqlMedicamento);
+            System.out.println("Medicamentos criados com sucesso!");
             stmt.execute(sqlMedicamentoLaboratorio);
+            System.out.println("Medicamentos laboratorios criados com sucesso!");
             stmt.execute(sqlFarmacia);
+            System.out.println("Farmacias criados com sucesso!");
             stmt.execute(sqlMedicamentoFarmacia);
+            System.out.println("Medicamentos farmacia criados com sucesso!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
