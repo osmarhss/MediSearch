@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,20 +10,23 @@ import java.util.List;
 public class Farmacia {
     private int id;
     private String nome;
+    private String cnpj;
     private String endereco;
     private String telefone;
     private List<Medicamento> medicamentoList;
 
-    public Farmacia( int id, String nome, String endereco, String telefone){
+    public Farmacia(int id, String nome, String cnpj, String endereco, String telefone){
         this.id = id;
         this.endereco = endereco;
         this.nome = nome;
+        this.cnpj = cnpj;
         this.telefone = telefone;
     }
 
-    public Farmacia(String nome, String endereco, String telefone){
+    public Farmacia(String nome, String cnpj, String endereco, String telefone){
         this.endereco = endereco;
         this.nome = nome;
+        this.cnpj = cnpj;
         this.telefone = telefone;
     }
 
@@ -82,6 +86,14 @@ public class Farmacia {
         this.telefone = telefone;
     }
 
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
     public List<Medicamento> getMedicamentoList() {
         return medicamentoList;
     }
@@ -91,5 +103,24 @@ public class Farmacia {
             this.medicamentoList = null;
         }
         this.medicamentoList = medicamentoList;
+    }
+
+    public void adicionarMedicamento(Medicamento medicamento){
+        if(medicamentoList == null)
+            medicamentoList = new ArrayList<>();
+
+        medicamentoList.add(medicamento);
+    }
+
+    @Override
+    public String toString() {
+        return "Farmacia{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", medicamentoList=" + medicamentoList +
+                '}';
     }
 }

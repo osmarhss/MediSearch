@@ -1,5 +1,6 @@
 package org.example.medisearch;
 
+import DbConnection.DatabaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +20,8 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
 
+        DatabaseManager.getConnection();
         launch();
-        SQLiteConnection.connect();
+        DatabaseManager.closeConnection();
     }
 }
