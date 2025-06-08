@@ -10,7 +10,6 @@ public class Medicamento {
     private String produto;
     private String apresentacao;
     private double precoSugerido;
-    List<Laboratorio> laboratorios;
 
     public Medicamento(int id, String substancia, String classeTerapeutica, String produto, String apresentacao,
                        double precoSugerido) {
@@ -113,23 +112,5 @@ public class Medicamento {
      */
     public void setPrecoSugerido(double precoSugerido) {
         this.precoSugerido = precoSugerido;
-    }
-
-    public List<Laboratorio> getLaboratorios() {
-        return laboratorios;
-    }
-
-    public void setLaboratorios(List<Laboratorio> laboratorios) {
-        if(this.laboratorios == null)
-            this.laboratorios = new ArrayList<Laboratorio>();
-
-        this.laboratorios = laboratorios;
-    }
-
-    public void adicionarLaboratorio(Laboratorio lab){
-        if(this.laboratorios == null)
-            this.laboratorios = new ArrayList<Laboratorio>();
-
-        this.laboratorios.add(lab);
     }
 }

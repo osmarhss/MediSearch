@@ -40,15 +40,6 @@ public class DatabaseManager {
                 " precoSugerido DECIMAL NOT NULL" +
                 ");";
 
-        // Tabela de associação para o relacionamento N-N
-        String sqlMedicamentoLaboratorio = "CREATE TABLE IF NOT EXISTS medicamento_laboratorio (" +
-                " medicamento_id INTEGER," +
-                " laboratorio_id INTEGER," +
-                " PRIMARY KEY (medicamento_id, laboratorio_id)," +
-                " FOREIGN KEY (medicamento_id) REFERENCES medicamentos(id)," +
-                " FOREIGN KEY (laboratorio_id) REFERENCES laboratorios(id)" +
-                ");";
-
         String sqlFarmacia = "CREATE TABLE IF NOT EXISTS farmacias (" +
                 " id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " nome TEXT NOT NULL," +
@@ -57,12 +48,10 @@ public class DatabaseManager {
                 " telefone TEXT NOT NULL" +
                 ");";
 
-        String sqlMedicamentoFarmacia = "CREATE TABLE IF NOT EXISTS medicamento_farmacia (" +
-                " medicamento_id INTEGER," +
-                " farmacia_id INTEGER," +
-                " PRIMARY KEY (medicamento_id, farmacia_id)," +
-                " FOREIGN KEY (medicamento_id) REFERENCES medicamentos(id)," +
-                " FOREIGN KEY (farmacia_id) REFERENCES farmacia(id)" +
+        String sqlUsuario = "CREATE TABLE IF NOT EXISTS usuarios (" +
+                " id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " email TEXT NOT NULL UNIQUE," +
+                " senha TEXT NOT NULL" +
                 ");";
 
         try (Statement stmt = conn.createStatement()) {
@@ -70,12 +59,8 @@ public class DatabaseManager {
             System.out.println("Laboratorios criados com sucesso!");
             stmt.execute(sqlMedicamento);
             System.out.println("Medicamentos criados com sucesso!");
-            stmt.execute(sqlMedicamentoLaboratorio);
-            System.out.println("Medicamentos laboratorios criados com sucesso!");
             stmt.execute(sqlFarmacia);
             System.out.println("Farmacias criados com sucesso!");
-            stmt.execute(sqlMedicamentoFarmacia);
-            System.out.println("Medicamentos farmacia criados com sucesso!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
