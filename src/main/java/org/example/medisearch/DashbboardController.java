@@ -12,6 +12,12 @@ import java.io.IOException;
 public class DashbboardController {
     @FXML
     private Label lblMedicamento;
+    @FXML
+    private Label lblLAbortorio;
+    @FXML
+    private Label lblFarmacia;
+    @FXML
+    private Label lblDados;
 
     @FXML
     private void onMouseClickedMenu() {
@@ -50,5 +56,13 @@ public class DashbboardController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    private void onMouseClickedFarmacia(){
+
+    }
+    @FXML
+    private void onMOuseClickedDados(){
+
     }
 }

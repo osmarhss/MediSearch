@@ -5,16 +5,17 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.medisearch.HelloController">
    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42aaffa2" height="40.0" layoutX="200.0" layoutY="54.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
       <Label fx:id="labelSenha" layoutX="152.0" layoutY="190.0" text="Senha:" />
       <PasswordField fx:id="txtSenha" layoutX="198.0" layoutY="186.0" prefHeight="26.0" prefWidth="218.0" />
       <TextField fx:id="txtEmail" layoutX="199.0" layoutY="147.0" prefHeight="26.0" prefWidth="218.0" />
       <TextField fx:id="txtName" layoutX="199.0" layoutY="112.0" prefHeight="26.0" prefWidth="218.0" />
-      <Label alignment="CENTER" layoutX="225.0" layoutY="43.0" prefHeight="60.0" prefWidth="150.0" text="Medi Search" textOverrun="CENTER_ELLIPSIS">
+      <Label alignment="CENTER" layoutX="225.0" layoutY="45.0" prefHeight="58.0" prefWidth="150.0" text="Medi Search" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
