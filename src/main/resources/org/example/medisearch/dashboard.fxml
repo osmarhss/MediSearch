@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.medisearch.DashbboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2ba3ff6e" height="406.0" layoutX="391.0" layoutY="-6.0" strokeType="OUTSIDE" width="209.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5993826985359192" green="0.5629629492759705" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9946164199192464">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.12982456386089325" blue="0.7789473533630371" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.6808510422706604" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2b7cff" height="59.0" layoutX="-1.0" layoutY="-1.0" strokeType="OUTSIDE" width="600.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5993826985359192" green="0.5629629492759705" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9946164199192464">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.12982456386089325" blue="0.7789473533630371" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.6808510422706604" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Circle fx:id="clr" fill="#1f96ff" layoutX="569.0" layoutY="29.0" radius="17.0" stroke="WHITE" strokeType="OUTSIDE">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" opacity="0.4437689483165741" />
+               </color>
+            </DropShadow>
+         </effect></Circle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4299ff" height="34.0" layoutX="416.0" layoutY="247.0" stroke="TRANSPARENT" strokeLineCap="BUTT" strokeMiterLimit="3.0" strokeType="OUTSIDE" width="164.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.3655015230178833" />
+               </color>
+            </DropShadow>
+         </effect></Rectangle>
+      <Label fx:id="lblMedicamento" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="255.0" onMouseClicked="#onMouseClickedMenu" prefHeight="18.0" prefWidth="142.0" text="Medicamentos" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4299ff" height="34.0" layoutX="416.0" layoutY="297.0" stroke="TRANSPARENT" strokeLineCap="BUTT" strokeMiterLimit="3.0" strokeType="OUTSIDE" width="164.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.4141337275505066" />
+               </color>
+            </DropShadow>
+         </effect></Rectangle>
+      <Label fx:id="lblLAbortorio" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="303.0" onMouseClicked="#onMOuseClickedLAboratorio" prefHeight="18.0" prefWidth="142.0" text="Laboratorio" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4299ff" height="34.0" layoutX="416.0" layoutY="345.0" stroke="TRANSPARENT" strokeLineCap="BUTT" strokeMiterLimit="3.0" strokeType="OUTSIDE" width="164.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.3715805411338806" />
+               </color>
+            </DropShadow>
+         </effect></Rectangle>
+      <Label fx:id="lblFarmacia" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="351.0" onMouseClicked="#onMouseClickedFarmacia" prefHeight="18.0" prefWidth="142.0" text="Farmacia" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42c3ffb0" height="36.0" layoutX="428.0" layoutY="10.0" stroke="TRANSPARENT" strokeLineCap="BUTT" strokeMiterLimit="3.0" strokeType="OUTSIDE" width="114.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.24088145792484283" />
+               </color>
+            </DropShadow>
+         </effect></Rectangle>
+      <Label fx:id="llblDados" alignment="CENTER" contentDisplay="CENTER" layoutX="432.0" layoutY="18.0" onMouseClicked="#onMOuseClickedDados" prefHeight="22.0" prefWidth="106.0" text="Conta" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" graphicTextGap="0.0" layoutX="20.0" layoutY="15.0" prefHeight="22.0" prefWidth="166.0" text="Medi Search" textFill="#ffffffb1">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+
+      <ImageView blendMode="SCREEN" cache="true" fitHeight="36.0" fitWidth="36.0" layoutX="551.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/perfil2.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff41" height="289.0" layoutX="29.0" layoutY="88.0" stroke="TRANSPARENT" strokeType="INSIDE" width="339.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="160.0" fitWidth="265.0" layoutX="65.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/medicamentotst1.png" />
+         </image>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.3989361822605133" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ImageView>
+      <Label layoutX="41.0" layoutY="115.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de medicamentos" textFill="#0051ffad">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblFarmacia1" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="131.0" onMouseClicked="#onMouseClickedFarmacia" prefHeight="18.0" prefWidth="142.0" text="Menu" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="132.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de medicamentos" textFill="#0051ffad">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
