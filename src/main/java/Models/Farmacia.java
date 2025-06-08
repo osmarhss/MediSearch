@@ -13,7 +13,6 @@ public class Farmacia {
     private String cnpj;
     private String endereco;
     private String telefone;
-    private List<Medicamento> medicamentoList;
 
     public Farmacia(int id, String nome, String cnpj, String endereco, String telefone){
         this.id = id;
@@ -94,24 +93,6 @@ public class Farmacia {
         this.cnpj = cnpj;
     }
 
-    public List<Medicamento> getMedicamentoList() {
-        return medicamentoList;
-    }
-
-    public void setMedicamentoList(List<Medicamento> medicamentoList) {
-        if(medicamentoList == null)
-            this.medicamentoList = null;
-
-        this.medicamentoList = medicamentoList;
-    }
-
-    public void adicionarMedicamento(Medicamento medicamento){
-        if(medicamentoList == null)
-            medicamentoList = new ArrayList<>();
-
-        medicamentoList.add(medicamento);
-    }
-
     @Override
     public String toString() {
         return "Farmacia{" +
@@ -120,7 +101,6 @@ public class Farmacia {
                 ", cnpj='" + cnpj + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", telefone='" + telefone + '\'' +
-                ", medicamentoList=" + medicamentoList +
                 '}';
     }
 }

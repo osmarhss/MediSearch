@@ -9,7 +9,6 @@ public class Laboratorio {
     private String cnpj;
     private String endereco;
     private String telefone;
-    private List<Medicamento> medicamentoList;
 
     public Laboratorio(int id, String nome, String cnpj, String endereco, String telefone) {
         this.id = id;
@@ -94,16 +93,5 @@ public class Laboratorio {
      */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public List<Medicamento> getMedicamentoList() {
-        return medicamentoList;
-    }
-
-    public void setMedicamentoList(List<Medicamento> medicamentoList) {
-        if(medicamentoList == null)
-            this.medicamentoList = new ArrayList<>();
-
-        this.medicamentoList = medicamentoList;
     }
 }
