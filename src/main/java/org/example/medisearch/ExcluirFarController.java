@@ -1,6 +1,6 @@
 package org.example.medisearch;
 
-import DAOs.LaboratorioDao;
+import DAOs.FarmaciaDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,16 +11,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class DeletarLabController {
+public class ExcluirFarController {
 
-    @FXML
-    public TextField idField;
     @FXML
     public Label delSucesso;
 
+    @FXML
+    public TextField idField;
+
     public void voltarTelaAnterior() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("laboratorio.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("farnacia.fxml"));
             Parent dashboardRoot = fxmlLoader.load();
 
             // Obter o stage atual a partir de um componente (por exemplo, o botão)
@@ -28,21 +29,20 @@ public class DeletarLabController {
 
             // Substituir a cena
             Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
-            stage.setTitle("Laboratorio - MediSearch");
+            stage.setTitle("Farmácia - MediSearch");
             stage.setScene(dashboardScene);
             stage.show();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public void btn_deletarLab() {
 
-        LaboratorioDao laboratorioDao = new LaboratorioDao();
-        var res = laboratorioDao.deletar(Integer.parseInt(idField.getText()));
+        FarmaciaDao farmaciaDao = new FarmaciaDao();
+        var res = farmaciaDao.deletar(Integer.parseInt(idField.getText()));
 
-        if (res)
+        if(res)
             delSucesso.setVisible(true);
     }
 }

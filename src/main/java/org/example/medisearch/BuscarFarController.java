@@ -1,7 +1,6 @@
 package org.example.medisearch;
 
-import DAOs.LaboratorioDao;
-import Models.Laboratorio;
+import DAOs.FarmaciaDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,35 +11,34 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AtualizarLabController {
+public class BuscarFarController {
 
     @FXML
-    private TextField idField;
+    public TextField idField;
 
     @FXML
-    private TextField nomeField;
+    public Label notFound;
 
     @FXML
-    private TextField cnpjField;
+    public Label nomeFar;
 
     @FXML
-    private TextField enderecoField;
+    public Label cnpjFar;
 
     @FXML
-    private TextField telefoneField;
+    public Label enderecoFar;
 
     @FXML
-    private Label attSucesso;
+    public Label telefoneFar;
 
     public void voltarTelaAnterior() {
-
         try {
             // Carregar a nova tela (dashboard.fxml)
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("farmacia.fxml"));
             Parent dashboardRoot = fxmlLoader.load();
 
             // Obter o stage atual a partir de um componente (por exemplo, o botão)
-            Stage stage = (Stage) nomeField.getScene().getWindow();
+            Stage stage = (Stage) idField.getScene().getWindow();
 
             // Substituir a cena
             Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
@@ -53,21 +51,22 @@ public class AtualizarLabController {
         }
     }
 
-    public void atualizarLaboratorio() {
+    public void btn_buscarPorId() {
+        int id = Integer.parseInt(idField.getText());
+        FarmaciaDao farmaciaDao = new FarmaciaDao();
+        var farmacia = farmaciaDao.obterPorId(id);
 
-        LaboratorioDao laboratorioDao = new LaboratorioDao();
-
-        Laboratorio laboratorio = new Laboratorio(
-                Integer.parseInt(idField.getText()),
-                nomeField.getText(),
-                cnpjField.getText(),
-                enderecoField.getText(),
-                telefoneField.getText()
-        );
-
-        var laboratorioAtt = laboratorioDao.atualizar(laboratorio);
-
-        if (laboratorioAtt != null)
-            attSucesso.setVisible(true);
+        if(farmacia != null){
+            nomeFar.setText(farmacia.getNome());
+            cnpjFar.setText(farmacia.getCnpj());
+            enderecoFar.setText(farmacia.getEndereco());
+            telefoneFar.setText(farmacia.getTelefone());
+        } else {
+            notFound.setText("Farmácia não encontrada");
+            nomeFar.setVisible(false);
+            cnpjFar.setVisible(false);
+            enderecoFar.setVisible(false);
+            telefoneFar.setVisible(false);
+        }
     }
 }

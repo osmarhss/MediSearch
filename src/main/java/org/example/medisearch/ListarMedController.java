@@ -1,7 +1,11 @@
 package org.example.medisearch;
 
 import DAOs.LaboratorioDao;
+import DAOs.MedicamentoDao;
+import Models.Farmacia;
 import Models.Laboratorio;
+import Models.Medicamento;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,27 +16,27 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class ListarLabController {
+public class ListarMedController {
 
     @FXML
-    private TableView<Laboratorio> tabelaLab;
+    private TableView<Medicamento> tabelaLab;
     @FXML
-    private TableColumn<Laboratorio, Integer> id_coluna;
+    private TableColumn<Medicamento, Integer> id_coluna;
     @FXML
-    private TableColumn<Laboratorio, String> cnpj_coluna;
+    private TableColumn<Medicamento, String> sub_coluna;
     @FXML
-    private TableColumn<Laboratorio, String> nome_coluna;
+    private TableColumn<Medicamento, Double> precoSug_coluna;
 
     @FXML
     public void initialize() {
         id_coluna.setCellValueFactory(new PropertyValueFactory<>("id"));
-        cnpj_coluna.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
-        nome_coluna.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        sub_coluna.setCellValueFactory(new PropertyValueFactory<>("substancia"));
+        precoSug_coluna.setCellValueFactory(new PropertyValueFactory<>("precoSugerido"));
     }
 
     public void voltarTelaAnterior() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("laboratorio.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("medicamento.fxml"));
             Parent dashboardRoot = fxmlLoader.load();
 
             // Obter o stage atual a partir de um componente (por exemplo, o botão)
@@ -40,7 +44,7 @@ public class ListarLabController {
 
             // Substituir a cena
             Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
-            stage.setTitle("Laboratorio - MediSearch");
+            stage.setTitle("Medicamento - MediSearch");
             stage.setScene(dashboardScene);
             stage.show();
         } catch (Exception e) {
@@ -48,11 +52,11 @@ public class ListarLabController {
         }
     }
 
-    public void btn_buscarTodos(){
-        LaboratorioDao laboratorioDao = new LaboratorioDao();
-        var listaLaboratorios = laboratorioDao.obterTodos();
-        for (Laboratorio lab : listaLaboratorios) {
-            tabelaLab.getItems().add(lab);
+    public void btn_buscarTodos() {
+        MedicamentoDao medicamentoDao = new MedicamentoDao();
+        var listaMedicamentos = medicamentoDao.obterTodos();
+        for (Medicamento med : listaMedicamentos) {
+            tabelaLab.getItems().add(med);
         }
     }
 }
