@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.medisearch.CadastrarMedController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+
+        <Label layoutX="80.0" layoutY="110.0" text="Substância:" />
+        <TextField fx:id="subsField" layoutX="180.0" layoutY="110.0" prefWidth="320.0" />
+
+        <Label layoutX="80.0" layoutY="150.0" text="Classe Terapêutica:" />
+        <TextField fx:id="classeTField" layoutX="180.0" layoutY="150.0" prefWidth="320.0" />
+
+        <Label layoutX="80.0" layoutY="190.0" text="Produto:" />
+        <TextField fx:id="produtoField" layoutX="180.0" layoutY="190.0" prefWidth="320.0" />
+
+        <Label layoutX="80.0" layoutY="230.0" text="Apresentação:" />
+        <TextField fx:id="apresentacaoField" layoutX="180.0" layoutY="230.0" prefWidth="320.0" />
+
+        <Label layoutX="80.0" layoutY="270.0" text="Preço Sugerido:" />
+        <TextField fx:id="precoSField" layoutX="180.0" layoutY="270.0" prefWidth="320.0" />
+
+        <Button layoutX="285.0" layoutY="315.0" onAction="#btn_cadastrarMed" text="Cadastrar" />
+        <Label layoutX="245.0" layoutY="47.0" text="Insira os dados do medicamento:" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="33.0" layoutX="-5.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" width="58.0" />
+        <Label fx:id="voltar" layoutX="10.0" layoutY="5.0" onMouseClicked="#voltarTelaAnterior" prefHeight="17.0" prefWidth="36.0" text="Voltar" textFill="WHITE" />
+        <Label fx:id="cadSucesso" layoutX="229.0" layoutY="368.0" text="Medicamento cadastrado com sucesso" visible="false" />
+
+    </children>
+
+</AnchorPane>

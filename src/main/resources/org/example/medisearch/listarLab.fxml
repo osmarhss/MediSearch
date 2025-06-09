@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.medisearch.ListarLabController">
+   <children>
+      <TableView fx:id="tabelaLab" layoutX="106.0" layoutY="100.0" prefHeight="200.0" prefWidth="386.0">
+        <columns>
+          <TableColumn fx:id="id_coluna" prefWidth="40.888851165771484" text="id" />
+          <TableColumn fx:id="cnpj_coluna" prefWidth="165.33336639404297" text="CNPJ" />
+            <TableColumn fx:id="nome_coluna" prefWidth="178.6666497124566" text="Nome" />
+        </columns>
+      </TableView>
+       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="33.0" layoutX="-5.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" width="58.0" />
+       <Label fx:id="voltar" layoutX="10.0" layoutY="5.0" onMouseClicked="#voltarTelaAnterior" prefHeight="17.0" prefWidth="36.0" text="Voltar" textFill="WHITE" />
+      <Button layoutX="274.0" layoutY="335.0" mnemonicParsing="false" text="Buscar" onAction="#btn_buscarTodos"/>
+   </children>
 </AnchorPane>

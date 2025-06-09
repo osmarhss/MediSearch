@@ -6,4 +6,5 @@ module org.example.medisearch {
 
     opens org.example.medisearch to javafx.fxml;
     exports org.example.medisearch;
+    exports Models;
 }

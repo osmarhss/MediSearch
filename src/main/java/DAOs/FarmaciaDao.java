@@ -92,7 +92,7 @@ public class FarmaciaDao extends DaoBase<Farmacia> {
 
         Connection conn = DatabaseManager.getConnection();
 
-            // 1. Atualiza os dados principais do medicamento
+            // 1. Atualiza os dados principais da farmacia
         try (PreparedStatement pstmt = conn.prepareStatement(sqlAtualizarFar)) {
                 pstmt.setString(1, farmacia.getNome());
                 pstmt.setString(2, farmacia.getCnpj());

@@ -1,6 +1,8 @@
 package org.example.medisearch;
 
+import DAOs.FarmaciaDao;
 import DAOs.LaboratorioDao;
+import Models.Farmacia;
 import Models.Laboratorio;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,19 +11,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class ListarLabController {
+public class ListarFarController {
 
     @FXML
-    private TableView<Laboratorio> tabelaLab;
+    private TableView<Farmacia> tabelaLab;
     @FXML
-    private TableColumn<Laboratorio, Integer> id_coluna;
+    private TableColumn<Farmacia, Integer> id_coluna;
+
     @FXML
-    private TableColumn<Laboratorio, String> cnpj_coluna;
+    private TableColumn<Farmacia, String> cnpj_coluna;
+
     @FXML
-    private TableColumn<Laboratorio, String> nome_coluna;
+    private TableColumn<Farmacia, String> nome_coluna;
 
     @FXML
     public void initialize() {
@@ -32,7 +35,7 @@ public class ListarLabController {
 
     public void voltarTelaAnterior() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("laboratorio.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("farmacia.fxml"));
             Parent dashboardRoot = fxmlLoader.load();
 
             // Obter o stage atual a partir de um componente (por exemplo, o botão)
@@ -40,7 +43,7 @@ public class ListarLabController {
 
             // Substituir a cena
             Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
-            stage.setTitle("Laboratorio - MediSearch");
+            stage.setTitle("Farmácia - MediSearch");
             stage.setScene(dashboardScene);
             stage.show();
         } catch (Exception e) {
@@ -49,10 +52,10 @@ public class ListarLabController {
     }
 
     public void btn_buscarTodos(){
-        LaboratorioDao laboratorioDao = new LaboratorioDao();
-        var listaLaboratorios = laboratorioDao.obterTodos();
-        for (Laboratorio lab : listaLaboratorios) {
-            tabelaLab.getItems().add(lab);
+        FarmaciaDao farmaciaDao = new FarmaciaDao();
+        var listaFarmacias = farmaciaDao.obterTodos();
+        for (Farmacia far : listaFarmacias) {
+            tabelaLab.getItems().add(far);
         }
     }
 }
