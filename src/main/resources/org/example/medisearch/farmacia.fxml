@@ -9,12 +9,12 @@
 <?import javafx.scene.shape.Rectangle?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.medisearch.LaboratorioController"
+            fx:controller="org.example.medisearch.FarmaciaController"
             prefHeight="400.0" prefWidth="600.0">
 
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-        <Label layoutX="261.0" layoutY="22.0" text="Laboratórios" textFill="WHITE" />
+        <Label layoutX="261.0" layoutY="22.0" text="Farmácias" textFill="WHITE" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="50.0" onMouseClicked="#voltarTelaAnterior"/>
         <Label fx:id="voltar" layoutX="9.0" layoutY="5.0" text="Voltar" onMouseClicked="#voltarTelaAnterior"/>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="44.0" layoutX="140.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="321.0" />
