@@ -134,7 +134,7 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" graphicTextGap="0.0" layoutX="20.0" layoutY="15.0" prefHeight="22.0" prefWidth="166.0" text="Medi Search" textFill="#ffffffb1">
+      <Label alignment="CENTER" graphicTextGap="0.0" layoutX="20.0" layoutY="15.0" prefHeight="22.0" prefWidth="166.0" text="Medi Search" textFill="#ffffffd9">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
@@ -166,17 +166,22 @@
             </DropShadow>
          </effect>
       </ImageView>
-      <Label layoutX="41.0" layoutY="115.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de medicamentos" textFill="#0051ffad">
+      <Label layoutX="41.0" layoutY="115.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de medicamentos." textFill="#0051ffad">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblFarmacia1" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="131.0" onMouseClicked="#onMouseClickedFarmacia" prefHeight="18.0" prefWidth="142.0" text="Menu" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="414.0" layoutY="130.0" prefHeight="18.0" prefWidth="142.0" text="Menu" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="132.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de medicamentos" textFill="#0051ffad">
+      <Label layoutX="41.0" layoutY="132.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de Laboratorios." textFill="#0051ffad">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="148.0" prefHeight="15.0" prefWidth="326.0" text="- Buscas de Farmácias." textFill="#0051ffad">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
