@@ -22,8 +22,7 @@ public class Medicamento {
         this.precoSugerido = precoSugerido;
     }
 
-    public Medicamento(String substancia, String classeTerapeutica, String produto,String apresentacao,
-                       double precoSugerido) {
+    public Medicamento() {
         this.substancia = substancia;
         this.produto = produto;
         this.classeTerapeutica = classeTerapeutica;

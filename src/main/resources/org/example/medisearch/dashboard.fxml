@@ -90,7 +90,7 @@
                </color>
             </DropShadow>
          </effect></Rectangle>
-      <Label fx:id="lblMedicamento" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="255.0" onMouseClicked="#onMouseClickedMenu" prefHeight="18.0" prefWidth="142.0" text="Medicamentos" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lblMedicamento" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="255.0" onMouseClicked="#onMouseClickedmedicamento" prefHeight="18.0" prefWidth="142.0" text="Medicamentos" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -129,7 +129,7 @@
                </color>
             </DropShadow>
          </effect></Rectangle>
-      <Label fx:id="llblDados" alignment="CENTER" contentDisplay="CENTER" layoutX="432.0" layoutY="18.0" onMouseClicked="#onMOuseClickedDados" prefHeight="22.0" prefWidth="106.0" text="Conta" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lblConta" alignment="CENTER" contentDisplay="CENTER" layoutX="432.0" layoutY="18.0" onMouseClicked="#onMouseClickedConta" prefHeight="22.0" prefWidth="106.0" text="Conta" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
@@ -171,7 +171,7 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblFarmacia1" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="131.0" onMouseClicked="#onMouseClickedFarmacia" prefHeight="18.0" prefWidth="142.0" text="Menu" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="131.0" prefHeight="18.0" prefWidth="142.0" text="Menu" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

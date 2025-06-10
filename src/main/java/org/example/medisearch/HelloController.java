@@ -1,5 +1,6 @@
 package org.example.medisearch;
 
+import Models.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,9 +23,13 @@ public class HelloController {
     private PasswordField txtSenha;
     @FXML
     private Label labelconfirmacao;
+    @FXML Label labeltst;
+@FXML Label labeltst1;
 
     @FXML
+
     private void onLoginButtonClick() {
+        Usuario us = new Usuario(txtName.getText(), txtEmail.getText(), txtSenha.getText());
         String name = txtName.getText();
         String email = txtEmail.getText();
         String senha = txtSenha.getText();
@@ -50,6 +55,9 @@ public class HelloController {
             }
         } else {
             labelconfirmacao.setText("Preencha todos os campos.");
+
         }
+
     }
+
 }

@@ -18,12 +18,12 @@ public class DashbboardController {
     private Label lblFarmacia;
     @FXML
     private Label lblDados;
-
+    @FXML private Label lblConta;
     @FXML
-    private void onMouseClickedMenu() {
+    private void onMouseClickedmedicamento() {
         try {
             // Carregar a nova tela (dashboard.fxml)
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("medicamento.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Med.fxml"));
             Parent dashboardRoot = fxmlLoader.load();
 
             // Obter o stage atual a partir de um componente (por exemplo, o botão)
@@ -46,7 +46,7 @@ public class DashbboardController {
             Parent dashboardRoot = fxmlLoader.load();
 
             // Obter o stage atual a partir de um componente (por exemplo, o botão)
-            Stage stage = (Stage) lblMedicamento.getScene().getWindow();
+            Stage stage = (Stage) lblLAbortorio.getScene().getWindow();
 
             // Substituir a cena
             Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
@@ -59,10 +59,41 @@ public class DashbboardController {
     }
     @FXML
     private void onMouseClickedFarmacia(){
+        try {
+            // Carregar a nova tela (dashboard.fxml)
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("laboratorio.fxml"));
+            Parent dashboardRoot = fxmlLoader.load();
 
+            // Obter o stage atual a partir de um componente (por exemplo, o botão)
+            Stage stage = (Stage) lblFarmacia.getScene().getWindow();
+
+            // Substituir a cena
+            Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
+            stage.setTitle("MediSearch - Medicamentos");
+            stage.setScene(dashboardScene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-    @FXML
-    private void onMOuseClickedDados(){
 
+    @FXML
+    private void onMouseClickedConta(){
+        try {
+            // Carregar a nova tela (dashboard.fxml)
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("laboratorio.fxml"));
+            Parent dashboardRoot = fxmlLoader.load();
+
+            // Obter o stage atual a partir de um componente (por exemplo, o botão)
+            Stage stage = (Stage) lblConta.getScene().getWindow();
+
+            // Substituir a cena
+            Scene dashboardScene = new Scene(dashboardRoot, 600, 400); // ajuste o tamanho conforme necessário
+            stage.setTitle("MediSearch - Medicamentos");
+            stage.setScene(dashboardScene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
